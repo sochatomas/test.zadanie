@@ -15,7 +15,6 @@ post_args.add_argument("title", type=str, required=True)
 post_args.add_argument("body", type=str, required=True)
 post_args.add_argument("id", type=str)
 
-
 update_post_args = reqparse.RequestParser()
 update_post_args.add_argument("title", type=str)
 update_post_args.add_argument("body", type=str)

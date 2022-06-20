@@ -115,3 +115,5 @@ def update_post(id):
 
 if __name__ == '__main__':
     app.run()
+
+# nad zadaním som strávil cca 7 hodín
