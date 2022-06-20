@@ -2,10 +2,12 @@
  Program zabezpečuje RESTful API na spravovanie príspevkov používateľov.
 
 ## Spustenie programu
+
 ### Inštalácia
- Nainštalovanie Pythonu vo verzií 3.9
+ - Nainštalovanie Pythonu vo verzií 3.9
  
- Inštalácia flask , sqlalchemy, requests, flask_restful, flask_sqlalchemy (napr. pomocou príkazu "pip install <nazov_kniznice>" v termináli)
+-  Inštalácia flask , sqlalchemy, requests, flask_restful, flask_sqlalchemy (napr. pomocou príkazu "pip install <nazov_kniznice>" v termináli)
+
 
 ### Prvé spustenie
 Do terminalu zadať postupne príkazy:
@@ -16,6 +18,8 @@ db.create_all()
 exit()
 flask run
 ```
+
+
 ## Požiadavky
 
 ### Funkčné požiadavky
@@ -34,9 +38,10 @@ flask run
 
 Externá API na linku https://jsonplaceholder.typicode.com/ - používané endpointy users a posts.
 
- #### Formát príspevku
+ ### Formát príspevku
 >{
 >       "id": integer
+>       
 >       "userId": integer
 >        "title": string
 >       "body": string
