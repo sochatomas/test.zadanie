@@ -40,7 +40,7 @@ Externá API na linku https://jsonplaceholder.typicode.com/ - používané endpo
 
  ### Formát príspevku
 >{
->       "id": integer
+>>       "id": integer
 >       "userId": integer
 >        "title": string
 >       "body": string
