@@ -4,7 +4,8 @@
 ## Spustenie programu
 ### Inštalácia
  Nainštalovanie Pythonu vo verzií 3.9
-  Inštalácia flask , sqlalchemy, requests, flask_restful, flask_sqlalchemy (napr. pomocou príkazu "pip install <nazov_kniznice>" v termináli)
+ 
+ Inštalácia flask , sqlalchemy, requests, flask_restful, flask_sqlalchemy (napr. pomocou príkazu "pip install <nazov_kniznice>" v termináli)
 
 ### Prvé spustenie
 Do terminalu zadať postupne príkazy:
@@ -35,8 +36,8 @@ Externá API na linku https://jsonplaceholder.typicode.com/ - používané endpo
 
  #### Formát príspevku
 >{
-        "id": integer
-        "userId": integer
-        "title": string
-        "body": string
-}
+>       "id": integer
+>       "userId": integer
+>        "title": string
+>       "body": string
+>}
