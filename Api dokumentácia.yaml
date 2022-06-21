@@ -1,0 +1,261 @@
+openapi: 3.0.0
+info:
+  title: Testovacie zadanie
+  description: API dokumentácia
+  version: 0.0.1
+
+paths:
+                        
+                      
+                      
+                      
+  /get/post/id/{id}:
+    parameters:
+     - in : path
+       name: id
+       required: true
+       schema:
+        type: integer
+     
+    get:
+      tags:
+        - "GET"
+      summary: Zobrazenie príspevku na základe id
+      description: Vráti príspevok na základe platného id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+               properties:
+                id:
+                  type: integer
+                  example: 2
+                user_id:
+                  type: integer
+                  example: 1
+                title:
+                  type: string
+                  example: nadpis
+                body :
+                  type: string
+                  example: telo
+                  
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+               properties:
+                message: 
+                  type: string
+                  example: Error
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+               properties:
+                message: 
+                  type: string
+                  example: Post not found
+                        
+                    
+  /get/post/userId/{userId}:
+    parameters:
+     - in : path
+       name: userId
+       required: true
+       schema:
+        type: integer
+     
+    get:
+      tags:
+        - "GET"
+      summary: Zobrazenie príspevku na základe userId
+      description: Vráti všetky príspevky pre dané userId
+      responses:
+        '200':
+          description: OK
+          
+          content:
+            application/json:
+              schema:
+               properties:
+                id:
+                  type: integer
+                  example: 2
+                user_id:
+                  type: integer
+                  example: 1
+                title:
+                  type: string
+                  example: nadpis
+                body :
+                  type: string
+                  example: telo
+
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+               properties:
+                message: 
+                  type: string
+                  example: Post not found
+                        
+      
+      
+      
+  
+  /add/post:
+    post:
+      tags:
+        - "POST"
+      summary: Pridanie príspevku
+      description: Pridá do databázy nový príspevok do databázy
+      requestBody: 
+        content:
+              application/json:
+                schema:
+                   properties:
+                    userId:
+                      type: integer
+                      example: 2
+                    title:
+                      type: string
+                      example: nadpis
+                    body:
+                      type: string
+                      example: telo
+      responses:
+        '201': 
+          description: Created
+          content:
+            application/json:
+              schema:
+               properties:
+                token: 
+                  type: string
+                  example: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1Ni.eyJ1c2VyIjoiamFubyIsImlkIjoxLCJleHAiOjE2NDg1ODc4MDF9.xMDBdz9DMafJaFyCWlE2diMLBsYEnNTvxrTme8AzLE
+                user_id:
+                  type: integer
+                  example: 4
+
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+               properties:
+                message: 
+                  type: string
+                  example: Fail
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+               properties:
+                message: 
+                  type: string
+                  example: userId not found
+    
+  
+  
+  
+  /delete/post/{id}:
+    parameters:
+     - in : path
+       name: id
+       required: true
+       schema:
+        type: integer
+     
+    delete:
+      tags:
+        - "DELETE"
+      summary: Odstránenie príspevku
+      description: Odstráni príspevok podľa platného id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+               properties:
+                message: 
+                  type: string
+                  example: Deleted
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+               properties:
+                message: 
+                  type: string
+                  example: Post not found
+    
+          
+
+  /update/post/{id}:
+    parameters:
+     - in : path
+       name: id
+       required: true
+       schema:
+        type: integer
+    put:
+      tags:
+        - "PUT"
+      summary: Upravenie príspevku
+      description: Upraví title alebo body pre daný príspevok
+      requestBody: 
+        content:
+              application/json:
+                schema:
+                     properties:
+                      title:
+                        type: string
+                        example: Konzultácie k bakalárke
+                      body :
+                        type: string
+                        example: telo
+                     
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+               properties:
+                message: 
+                  type: string
+                  example: Updated
+                  
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+               properties:
+                message: 
+                  type: string
+                  example: No changes
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+               properties:
+                message: 
+                  type: string
+                  example: Id not found
+          
+        
+          
+
+      
